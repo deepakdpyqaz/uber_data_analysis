@@ -32,7 +32,6 @@
 ![plt5](readme/plt5.jpeg)
 ![plt6](readme/plt6.jpeg)
 ![plt7](readme/plt7.jpeg)
-![plt8](readme/plt8.jpeg)
 ![plt9](readme/plt9.jpeg)
 ![plt10](readme/plt10.jpeg)
 ![plt11](readme/plt11.jpeg)
