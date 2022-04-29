@@ -5,7 +5,7 @@ library(dplyr)
 library(tidyr)
 library(DT)
 library(scales)
-colors = c("#CC1011", "#665555", "#05a399","#cfcaca", "#f5e840", "#0683c9", "#e075b0")
+colors = c("#E3A869", "#8B7D6B", "#EE8262","#FF6A6A", "#32CD32", "#0683c9", "#9932CC")
 apr_data <- read.csv("Uber-dataset/data/uber-raw-data-apr14.csv")
 may_data <- read.csv("Uber-dataset/data/uber-raw-data-may14.csv")
 jun_data <- read.csv("Uber-dataset/data/uber-raw-data-jun14.csv")
@@ -31,7 +31,7 @@ hour_data <- data_2014 %>%
   group_by(hour) %>%
   dplyr::summarize(Total = n()) 
 datatable(hour_data)ggplot(hour_data, aes(hour, Total)) + 
-  geom_bar( stat = "identity", fill = "steelblue", color = "red") +
+  geom_bar( stat = "identity", fill = "lightsalmon4", color = "lightsalmon4") +
   ggtitle("Trips Every Hour") +
   theme(legend.position = "none") +
   scale_y_continuous(labels = comma)
@@ -49,7 +49,7 @@ day_group <- data_2014 %>%
   dplyr::summarize(Total = n()) 
 datatable(day_group)
 ggplot(day_group, aes(day, Total)) + 
-  geom_bar( stat = "identity", fill = "steelblue") +
+  geom_bar( stat = "identity", fill = "red") +
   ggtitle("Trips Every Day") +
   theme(legend.position = "none") +
   scale_y_continuous(labels = comma)
@@ -101,13 +101,13 @@ day_and_hour <- data_2014 %>%
 
 datatable(day_and_hour)
 ggplot(day_and_hour, aes(day, hour, fill = Total)) +
-  geom_tile(color = "white") +
+  geom_tile(color = "navajowhite1") +
   ggtitle("Heat Map by Hour and Day")
 ggplot(day_month_group, aes(day, month, fill = Total)) +
-  geom_tile(color = "white") +
+  geom_tile(color = "navajowhite1") +
   ggtitle("Heat Map by Month and Day")
 ggplot(month_weekday, aes(dayofweek, month, fill = Total)) +
-  geom_tile(color = "white") +
+  geom_tile(color = "navajowhite1") +
   ggtitle("Heat Map by Month and Day of Week")
 month_base <-  data_2014 %>%
   group_by(Base, month) %>%
@@ -118,10 +118,10 @@ day0fweek_bases <-  data_2014 %>%
   dplyr::summarize(Total = n()) 
 
 ggplot(month_base, aes(Base, month, fill = Total)) +
-  geom_tile(color = "white") +
+  geom_tile(color = "navajowhite1") +
   ggtitle("Heat Map by Month and Bases")
 ggplot(day0fweek_bases, aes(Base, dayofweek, fill = Total)) +
-  geom_tile(color = "white") +
+  geom_tile(color = "navajowhite1") +
   ggtitle("Heat Map by Bases and Day of Week")
 min_lat <- 40.5774
 max_lat <- 40.9176
